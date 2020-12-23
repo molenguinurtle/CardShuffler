@@ -38,24 +38,40 @@ namespace CardShuffler
             // Create a deck of cards, named 'firstDeck'
             // Fill the deck with cards
             // Printout the deck of cards as is. 
+            firstDeck = new CardDeck("firstDeck");
+            firstDeck.GenerateCards();
+            firstDeck.PrintCards();
+
 
             // 2.
             // Shuffle the deck of cards
             // Printout the deck of cards as is.
+            firstDeck.Shuffle();
+            firstDeck.PrintCards();
+
 
             // 3.
             // Put the deck of cards back into order: Spades, Hearts, Diamonds, Clubs
             // Printout the deck of cards as is.
+            firstDeck.OrderCards();
+            firstDeck.PrintCards();
 
             // 4.
             // Shuffle the deck of cards and print it out.
             // Peak at the first three cards of the deck, and print them out.
-            // Peak at the last three cards of the deck, and print them out.            
+            // Peak at the last three cards of the deck, and print them out.
+            firstDeck.Shuffle();
+            firstDeck.PrintCards();
+            firstDeck.DealCardFromTop(3);
+            firstDeck.DealCardFromBottom(3);
 
             // 5.
             // Take the first card in the deck and put it in the middle of the deck.            
             // Take the last card in the deck, and put it in the middle of the deck.
             // Print out the deck of cards
+            firstDeck.MoveCardToMiddleOfDeck(0);
+            firstDeck.MoveCardToMiddleOfDeck(firstDeck.DeckCount() - 1);
+            firstDeck.PrintCards();
 
             // 6.
             // Create two more decks of cards: secondDeck, thirdDeck
@@ -69,6 +85,13 @@ namespace CardShuffler
             // Position 2: Ace of Spades, Ace of Spades, Match found.
             // Position 3: Five of Clubs, Eight of Hearts. No Match.
             // Position 4: King of Clubs, King of Clubs. Match found.
+            secondDeck = new CardDeck("secondDeck");
+            thirdDeck = new CardDeck("thirdDeck");
+            secondDeck.GenerateCards();
+            thirdDeck.GenerateCards();
+            secondDeck.Shuffle();
+            thirdDeck.Shuffle();
+            secondDeck.Compare(thirdDeck);
 
         }
     }

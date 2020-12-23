@@ -6,8 +6,8 @@ namespace CardShuffler
 {
     class Card
     {
-        protected Suits Suit;
-        protected Ranks Rank;
+        public Suits Suit { get; private set; }
+        public Ranks Rank { get; private set; }
 
         public Card(Suits suit, Ranks rank)
         {
@@ -21,7 +21,13 @@ namespace CardShuffler
          */
         public override string ToString()
         {
+            Console.WriteLine(Rank.ToString() + " of " + Suit.ToString());
             return base.ToString();
+        }
+
+        public string ReturnString()
+        {
+            return Rank.ToString() + " of " + Suit.ToString();
         }
     }
 }
